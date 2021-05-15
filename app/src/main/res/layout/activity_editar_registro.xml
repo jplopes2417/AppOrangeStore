@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".activity.EditarRegistroActivity">
+
+    <TextView
+        android:id="@+id/display_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="@string/nome_loja"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/nomeProduto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/display_text"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background"
+        android:digits="abcdefghijklmnopqrstuvxzçw ABCDEFGHIJKLMNOPQRSTUVXZÇW 1234567890"
+        android:hint="@string/dica_insercao_nome"
+        android:inputType="text"
+        android:maxLength="100"
+        android:padding="10dp"
+
+        />
+
+    <EditText
+        android:id="@+id/qtdProduto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nomeProduto"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background"
+        android:hint="@string/dica_insercao_qtd"
+        android:inputType="number"
+        android:maxLength="7"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/categoriaProduto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/qtdProduto"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background"
+        android:digits="abcdefghijklmnopqrstuvxzçw ABCDEFGHIJKLMNOPQRSTUVXZÇW 1234567890"
+        android:hint="@string/dica_insercao_categoria"
+        android:inputType="text"
+        android:maxLength="100"
+        android:padding="10dp" />
+
+    <Button
+        android:id="@+id/AddBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/categoriaProduto"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background"
+        android:text="@string/botao_adicionar"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+</RelativeLayout>

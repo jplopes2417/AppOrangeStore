@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">OrangeStore - ADM</string>
+    <string name="nome_loja">ORANGE SHOP</string>
+    <string name="dica_insercao_nome">Insira aqui o nome do produto</string>
+    <string name="dica_insercao_qtd">Insira aqui a quantidade de produtos</string>
+    <string name="dica_insercao_categoria">Insira aqui a categoria do produto</string>
+    <string name="botao_adicionar">Adicionar</string>
+    <string name="nome_produto">Nome do produto</string>
+    <string name="qtd_produto">Quantidade de produtos</string>
+    <string name="categoria_produto">Categoria do produto</string>
+    <string name="abMainAct">PRODUTOS</string>
+    <string name="abEditRegAct">ATUALIZAÇÃO PRODUTO</string>
+    <string name="abAddRegAct">ADICIONAR PRODUTO</string>
+    <string name="sucessReg">Operação realizada com sucesso!</string>
+    <string name="delReg">EXCLUSÃO</string>
+    <string name="msgDelReg">Gostaria de remover o produto?</string>
+    <string name="msgPositiveBtn">SIM</string>
+    <string name="msgNegativeBtn">NÃO</string>
+    <string name="msgConfirmDelReg">Registro deletado!</string>
+    <string name="msgConfirmUpdateReg">Confirma a alteração?</string>
+    <string name="errEmptyEt">Favor preencher o valor deste campo</string>
+    <string name="errorDuplicateReg">Produto já existe, favor cadastrar parâmetros diferentes.</string>
+</resources>

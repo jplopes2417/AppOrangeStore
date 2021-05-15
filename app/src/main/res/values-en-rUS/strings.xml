@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">OrangeStore - ADM</string>
+    <string name="nome_loja">ORANGE SHOP</string>
+    <string name="dica_insercao_nome">Name of the product</string>
+    <string name="dica_insercao_qtd">Product quantity</string>
+    <string name="dica_insercao_categoria">Product category</string>
+    <string name="botao_adicionar">Add</string>
+    <string name="nome_produto">Product name</string>
+    <string name="qtd_produto">Product quantity</string>
+    <string name="categoria_produto">Product category</string>
+    <string name="abMainAct">PRODUCTS</string>
+    <string name="abEditRegAct">PRODUCT UPDATE</string>
+    <string name="abAddRegAct">NEW PRODUCT</string>
+    <string name="sucessReg">Operation performed successfully!</string>
+    <string name="delReg">DELETE</string>
+    <string name="msgDelReg">Would you like to remove the product?</string>
+    <string name="msgPositiveBtn">YES</string>
+    <string name="msgNegativeBtn">NO</string>
+    <string name="msgConfirmDelReg">Record deleted!</string>
+    <string name="msgConfirmUpdateReg">Do you confirm the change?</string>
+    <string name="errEmptyEt">This info cannot be empty</string>
+    <string name="errorDuplicateReg">Product already exists, please register different parameters.</string>
+</resources>
