@@ -1,7 +1,5 @@
 package com.br.apporangestore.dao;
 
-import org.w3c.dom.ls.LSOutput;
-
 public class ParametrosTabelaProduto {
 
     public static final String NOME_BANCO = "ORANGE_SHOP_DB";
