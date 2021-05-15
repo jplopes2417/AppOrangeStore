@@ -17,6 +17,7 @@ import com.br.apporangestore.util.ValidacaoUtil;
 
 public class EditarRegistroActivity extends AppCompatActivity {
 
+    private static final String LOG_TAG = EditarRegistroActivity.class.getName();
     private EditText nomeProdutoEt, qtdProdutoEt, categoriaProdutoEt;
 
     Button salvarBtn;
@@ -69,29 +70,39 @@ public class EditarRegistroActivity extends AppCompatActivity {
 
         salvarBtn.setOnClickListener(v -> {
 
-            boolean validacao = true;
+            boolean validacao;
 
-            if (!validacao) {
-                ValidacaoUtil.validarPreenchimentoTexto(nomeProdutoEt);
-                ValidacaoUtil.validarPreenchimentoTexto(qtdProdutoEt);
-                ValidacaoUtil.validarPreenchimentoTexto(categoriaProdutoEt);
-            }
-
-            validacao = dbHelper.validarProdutoDuplicado(nomeProdutoEt.getText().toString().trim(),
-                    categoriaProdutoEt.getText().toString().trim());
+            validacao = ValidacaoUtil.validarPreenchimentoTexto(nomeProdutoEt, qtdProdutoEt, categoriaProdutoEt);
 
             if (validacao) {
+                if (!modoEdicao) {
 
-                Toast.makeText(EditarRegistroActivity.this,
-                        R.string.errorDuplicateReg,
-                        Toast.LENGTH_SHORT).show();
+                    validacao = dbHelper.validarProdutoDuplicado(nomeProdutoEt.getText().toString().trim(),
+                            categoriaProdutoEt.getText().toString().trim());
+
+                    if (validacao) {
+                        Toast.makeText(EditarRegistroActivity.this,
+                                R.string.errorDuplicateReg,
+                                Toast.LENGTH_SHORT).show();
+                    } else {
+                        Log.d(LOG_TAG, "Atualização de registro: " + id);
+                        gravarDados();
+                    }
+                } else {
+                    Log.d(LOG_TAG, "Gravação de registro: " + id);
+                    gravarDados();
+                }
             } else {
-
-                getDados();
-                startActivity(new Intent(EditarRegistroActivity.this, MainActivity.class));
-                Toast.makeText(EditarRegistroActivity.this, R.string.sucessReg, Toast.LENGTH_SHORT).show();
+                Log.e(LOG_TAG, "Tudo está vazio!");
             }
         });
+
+    }
+
+    private void gravarDados() {
+        getDados();
+        startActivity(new Intent(EditarRegistroActivity.this, MainActivity.class));
+        Toast.makeText(EditarRegistroActivity.this, R.string.sucessReg, Toast.LENGTH_SHORT).show();
     }
 
     private void getDados() {

@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class Banco extends SQLiteOpenHelper {
 
-    private static final String LOG_TAG = "BANCO DE DADOS: ";
+    private static final String LOG_TAG = Banco.class.getName();
 
     public Banco(@Nullable Context context) {
         super(context, ParametrosTabelaProduto.NOME_BANCO, null, ParametrosTabelaProduto.VERSAO_BANCO);

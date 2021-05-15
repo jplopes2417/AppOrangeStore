@@ -121,19 +121,16 @@ public class AdapterProduto extends RecyclerView.Adapter<AdapterProduto.Holder> 
         builder.setCancelable(false);
         builder.setIcon(R.drawable.ic_pencil_edit);
 
-        builder.setPositiveButton(R.string.msgPositiveBtn, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Intent intent = new Intent(context, EditarRegistroActivity.class);
-                intent.putExtra("ID", id);
-                intent.putExtra("NOME_PRODUTO", nomeProduto);
-                intent.putExtra("QTD_PRODUTO", quantidadeProduto);
-                intent.putExtra("CATEGORIA_PRODUTO", categoriaProduto);
-                intent.putExtra("DATA_CRIACAO", dataCriacao);
-                intent.putExtra("DATA_ALTERACAO", dataAlteracao);
-                intent.putExtra("modoEdicao", true);
-                context.startActivity(intent);
-            }
+        builder.setPositiveButton(R.string.msgPositiveBtn, (dialog, which) -> {
+            Intent intent = new Intent(context, EditarRegistroActivity.class);
+            intent.putExtra("ID", id);
+            intent.putExtra("NOME_PRODUTO", nomeProduto);
+            intent.putExtra("QTD_PRODUTO", quantidadeProduto);
+            intent.putExtra("CATEGORIA_PRODUTO", categoriaProduto);
+            intent.putExtra("DATA_CRIACAO", dataCriacao);
+            intent.putExtra("DATA_ALTERACAO", dataAlteracao);
+            intent.putExtra("modoEdicao", true);
+            context.startActivity(intent);
         });
 
         builder.setNegativeButton(R.string.msgNegativeBtn, new DialogInterface.OnClickListener() {
