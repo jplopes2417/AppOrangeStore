@@ -105,18 +105,18 @@ public class Banco extends SQLiteOpenHelper {
         return arrayList;
     }
 
-    public boolean validarProdutoDuplicado(String nomeProduto, String qtdProduto, String categoriaProduto) {
+    public boolean validarProdutoDuplicado(String nomeProduto, String categoriaProduto) {
 
         String consultaProduto = "SELECT * FROM " + ParametrosTabelaProduto.TABELA_PRODUTO +
                 "\n WHERE 1=1" +
                 "\n AND UPPER(" + ParametrosTabelaProduto.PRODUTO_NOME + ") = " + "'" + nomeProduto.toUpperCase() + "'" +
-                "\n AND " + ParametrosTabelaProduto.PRODUTO_QTD + " = " + qtdProduto +
                 "\n AND UPPER(" + ParametrosTabelaProduto.PRODUTO_CATEGORIA + ") = " + "'" + categoriaProduto.toUpperCase() + "'";
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(consultaProduto, null);
+        Log.d(Banco.LOG_TAG, consultaProduto);
+
         if (cursor.moveToNext()) {
-            Log.d(Banco.LOG_TAG, consultaProduto);
             db.close();
             return true;
         } else {

@@ -78,7 +78,6 @@ public class EditarRegistroActivity extends AppCompatActivity {
             }
 
             validacao = dbHelper.validarProdutoDuplicado(nomeProdutoEt.getText().toString().trim(),
-                    qtdProdutoEt.getText().toString().trim(),
                     categoriaProdutoEt.getText().toString().trim());
 
             if (validacao) {
